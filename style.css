@@ -1,0 +1,499 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* TODO: Add CSS variables for colors */
+:root {
+  /* Define your color scheme and fonts here */
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: monospace;
+
+  /* Light Theme Colors */
+  --primary-color: #2c3e50; /* Rich dark teal for accents */
+  --neutral-color: #7a7a7a; /* Soft gray for neutral elements */
+  --background-color: #f0f0f0; /* Light background for clarity */
+  --text-color: #2c3e50; /* Dark teal for readable text */
+  --header-footer-bg: #75929e; /* Subtle blue for header/footer background #3a515c*/
+  --hover-color: #425766; /* Slightly darker shade for hover effects */
+  --input-bg: #ffffff; /* Clean white for input backgrounds */
+  --input-border-color: #c6eeff; /* Gentle blue for input borders */
+  --project-text: #6a7275;
+}
+
+.dark-theme {
+  /* Dark Theme Colors */
+  --primary-color: #6599b1; /* Bright pale blue for accents */
+  --neutral-color: #597083; /* Muted grayish-blue for neutral elements */
+  --background-color: #1f3038; /* Deep dark slate for the background */
+  --text-color: #f0f0f0; /* Soft light gray for readable text */
+  --header-footer-bg: #3b5057; /* Darker muted teal for header/footer */
+  --hover-color: #85b8ce; /* Light blue for hover effects */
+  --input-bg: #283746; /* Dark teal for input backgrounds */
+  --input-border-color: #425766; /* Subtle bluish-gray for input borders */
+  --project-text: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+button#theme-toggle {
+  background-color: var(--ff-primary);
+  padding: 6px 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+
+button#theme-toggle:hover {
+  background-color: var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--ff-primary);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* TODO: Style the navigation */
+
+nav {
+  /* Add styles for the navigation bar */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--header-footer-bg);
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+  border-top: 1px solid var(--primary-color);
+}
+
+.hidden {
+  display: none;
+}
+nav ul {
+  margin: 1em 0;
+}
+nav ul li {
+  font-size: 18px;
+  padding: 1em;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: var(--hover-color);
+}
+
+.logo {
+  font-size: 40px;
+  font-family: var(--ff-primary);
+}
+
+/* TODO: Style the header */
+header {
+  /* Add styles for the header section */
+  background-color: var(--header-footer-bg);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.header__container ul {
+  display: flex;
+  gap: 16px;
+}
+
+.header__container ul li {
+  list-style: none;
+}
+.header__container ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+.header__container ul li a:hover {
+  color: var(--hover-color);
+}
+
+.hamburger-menu {
+  font-size: 24px;
+  cursor: pointer;
+  /* display: none; */
+}
+
+.header__container ul {
+  display: none;
+}
+
+/* TODO: Style the sections */
+section div {
+  /* Add common styles for all sections */
+  padding: 16px 16px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+section h2 {
+  text-align: center;
+  padding: 16px 0;
+}
+
+section p {
+  font-size: medium;
+}
+#hero {
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  min-height: 300px;
+  background-image: url(./assets/Aretha-Techno-Wallpaper-With-Plasma-Logo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  min-height: 300px;
+  color: whitesmoke;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.about p {
+  text-align: start;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.logos div {
+  text-align: center;
+}
+.logos img {
+  width: 150px; 
+}
+
+#skills {
+  background: var(--neutral-color);
+}
+
+.flex-element {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills ul {
+  margin: 32px;
+}
+
+li {
+  padding: 4px;
+}
+
+.skills ul li::marker {
+  content: '→';
+  color: var(--background-color);
+  font-size: 16px;
+}
+
+#projects {
+  background-color: var(--primary-color);
+}
+.projects {
+  display: grid;
+  gap: 16px;
+}
+
+#projects .h2 {
+  color: var(--project-text);
+}
+
+.project-card {
+  background-color: var(--background-color);
+  padding: 0;
+  margin: 0 16px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.project-info {
+  text-align: center;
+
+  height: max-content;
+}
+
+.description {
+  margin: 4px 0;
+}
+
+.project-info a {
+  display: inline-block;
+  text-decoration: none;
+
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-info a:hover {
+  background-color: var(--hover-color);
+}
+
+.links {
+  display: flex;
+
+  gap: 8px;
+}
+
+div .links {
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+.project-link {
+  background-color: var(--primary-color);
+  padding: 10px 10px;
+  margin: 8px auto;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+}
+input,
+textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border-color);
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 16px;
+  position: relative;
+}
+
+textarea {
+  height: 150px;
+}
+input[type='submit'] {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: var(--hover-color);
+}
+
+form label {
+  display: none;
+}
+
+.contact___div > * {
+  margin-bottom: 8px;
+}
+
+.input-box input:focus,
+.input-box textarea {
+  outline: none;
+}
+
+.input-box input:valid:not(:placeholder-shown),
+.input-box textarea:valid:not(:placeholder-shown) {
+  border: 1px solid rgb(30, 228, 40);
+}
+
+.input-box input:invalid:not(:placeholder-shown),
+.input-box textarea:invalid:not(:placeholder-shown) {
+  border: 1px solid red;
+}
+
+div.input-box {
+  padding: 10px;
+}
+
+.error {
+  font-size: 12px;
+  color: rgb(224, 13, 13);
+  position: absolute;
+  margin: 2px;
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.125em;
+  fill: var(--text-color);
+  margin: 50px 10px 0 0;
+  
+}
+
+/* TODO: Style the footer */
+footer {
+  /* Add styles for the footer */
+  background-color: var(--header-footer-bg);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#hero,
+#about,
+#skills,
+#projects,
+#contact {
+  scroll-margin: 50px;
+}
+
+/* TODO: Add responsive design */
+@media (min-width: 768px) {
+  /* Add your Desktop styles here */
+  html {
+    scroll-behavior: smooth;
+  }
+  .header__container {
+    padding: 2px 16px;
+  }
+  .header__container ul {
+    display: flex;
+  }
+  .hamburger-menu {
+    display: none;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  #hero::before {
+    filter: blur(3px);
+  }
+  .hero,
+  #hero::before {
+    min-height: 400px;
+  }
+  .hero h1 {
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+  .hero p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  section h2 {
+    font-size: 30px;
+    padding-bottom: 24px;
+  }
+
+  .project-card {
+    margin: 16px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  section .contact {
+    display: flex;
+    justify-content: space-around;
+
+    gap: 16px;
+  }
+
+  section .contact {
+    padding: 16px;
+  }
+  .form {
+    width: 55%;
+  }
+  .contact___div {
+    width: 40%;
+    
+    font-size: 16px;
+    
+  }
+  .contact___div > * {
+    margin-top: 18px;
+    padding-top: 0;
+  }
+
+  .name__email {
+    display: flex;
+    gap: 16px;
+  }
+
+  div.input-box {
+    padding: 12px;
+  }
+}
