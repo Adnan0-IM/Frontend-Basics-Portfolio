@@ -24,6 +24,7 @@ checkScroll(); // Check initial state
 
 // TODO 1: Create a function to toggle dark/light theme
 const toggleThemeButton = document.getElementById('theme-toggle');
+const toggleThemeButton2 = document.getElementById('theme-toggle2');
 const root = document.documentElement;
 const toggleTheme = () => {
   // Your code here
@@ -39,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 toggleThemeButton.addEventListener('click', toggleTheme);
+toggleThemeButton2.addEventListener('click', toggleTheme);
 
 // TODO 2: Create a function to validate the contact form
 const form = document.getElementById('form');
