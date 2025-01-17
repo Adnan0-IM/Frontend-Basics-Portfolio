@@ -9,7 +9,7 @@ const checkScroll = () => {
       section.style.transform = 'translateY(0)';
     }
   });
-}
+};
 
 // Initial styles for sections
 sections.forEach((section) => {
@@ -30,8 +30,7 @@ const toggleTheme = () => {
   // Your code here
   const isDarkTheme = root.classList.toggle('dark-theme');
   localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-
-}
+};
 // Apply saved theme on page load
 window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
@@ -39,10 +38,9 @@ window.addEventListener('DOMContentLoaded', () => {
     root.classList.add('dark-theme');
   }
 });
-Array.from(toggleThemeButtons).forEach(button => {
-
+Array.from(toggleThemeButtons).forEach((button) => {
   button.addEventListener('click', toggleTheme);
-})
+});
 
 // TODO 2: Create a function to validate the contact form
 const form = document.getElementById('form');
@@ -92,8 +90,6 @@ const handlesubmit = (event) => {
 };
 form.addEventListener('submit', handlesubmit);
 
-
-
 // TODO 3: Create a typing effect for the header
 const text = 'Front-End Developer && Blockchain Professional';
 let index = 0;
@@ -111,8 +107,6 @@ const typing = () => {
 };
 
 typing();
-
-
 
 // Bonus : Create a mobile nav menu
 
