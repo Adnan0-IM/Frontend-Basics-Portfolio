@@ -30,14 +30,14 @@ const toggleTheme = () => {
   const isDarkTheme = root.classList.toggle('dark-theme');
   localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
 
-  // Apply saved theme on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      root.classList.add('dark-theme');
-    }
-  });
 }
+// Apply saved theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    root.classList.add('dark-theme');
+  }
+});
 toggleThemeButton.addEventListener('click', toggleTheme);
 
 // TODO 2: Create a function to validate the contact form
