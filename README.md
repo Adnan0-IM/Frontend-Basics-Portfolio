@@ -19,6 +19,8 @@ A responsive personal portfolio website built with HTML, CSS, and JavaScript to 
 - `script.js` - JavaScript functionality
 - `class/` - Practice examples and demonstrations
 
+## Completed Site
+Live URL: [Live Site](https://adnan0-im.github.io/Frontend-Basics-Portfolio/ "Portfolio")
 ## Getting Started
 
 1. Clone this repository
